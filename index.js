@@ -38,6 +38,7 @@ app.post(
    }
 );
 
-const PORT = 3006;
+const PORT = process.env.PORT || 3006;
 app.listen(PORT, () => {
+   console.log('running on port', PORT);
 });
