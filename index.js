@@ -7,6 +7,10 @@ const scrapp = require('./helpers/scrapp');
 app.use(express.json());
 app.use(cors());
 
+
+app.get('/', (req, resp) => {
+   resp.send('<h1>ase1 api</h1>');
+});
 app.post(
    '/api/calificaciones',
    async (req, resp) => {
