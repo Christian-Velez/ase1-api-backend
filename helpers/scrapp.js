@@ -72,7 +72,7 @@ module.exports = async (registro, password) => {
       };
    } catch (err) {
       return {
-         message: 'ocurrio un error'
+         err
       };
    }
 };

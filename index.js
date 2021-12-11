@@ -11,6 +11,7 @@ app.use(cors());
 app.get('/', (req, resp) => {
    resp.send('<h1>ase1 api</h1>');
 });
+
 app.post(
    '/api/calificaciones',
    async (req, resp) => {
@@ -20,13 +21,14 @@ app.post(
          materias,
          promedio,
          calificaciones,
-         alumno
+         alumno,
+         error
       } = await scrapp(registro, password);
 
       
       if(!promedio){
          return resp.json({
-            error: true,
+            error: error.message
          });
       }
 
